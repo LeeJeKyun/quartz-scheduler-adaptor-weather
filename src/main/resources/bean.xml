@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <!--  api호출에 필요한 정보를 가지고 있는 ScheduleConfig 빈 생성  -->
+    <bean id="schedulerConfig" class="com.meta.mesim.esb.scheduler.ScheduleConfig" init-method="init">
+        <property name="url" value="http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"/>
+        <property name="pageNo" value="1"/>
+        <property name="numOfRows" value="120"/>
+        <property name="serviceKey" value="wRYbzrAQTB1ZEuVxozZ2sw0U8y1TWQuG0YAwtvjXTPklJtRBgg8TDvCqTaZHkTRJ1nQ1JIoFStuTXMYNK1F+uQ=="/>
+        <property name="nx" value="65"/>
+        <property name="ny" value="122"/>
+        <property name="dataType" value="JSON"/>
+        <property name="cronExpression" value="0/10 * * * * ?"/>
+    </bean>
+</beans>
